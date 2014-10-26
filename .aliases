@@ -1,1 +1,36 @@
+#!/bin/bash
+
+alias ohyes="cd $CODE_DIR"
+
+#terminal
+alias ls="ls -G"
+alias lsa="ls -aG"
+
+#git
 alias gst="git status"
+alias ga="git add"
+alias gd="git diff"
+alias gwd="git diff --color-words"
+
+#ios
+alias pi="pod --verbose install"
+
+#ruby
+alias bi="bundle install"
+
+
+function drawable {
+  mkdir drawable-xxhdpi; mkdir drawable-xhdpi; mkdir drawable-hdpi; mkdir drawable-mdpi
+  for file in $(find . -type f -iname '*-xxhdpi*'); do
+    mv "$file" "drawable-xxhdpi/${file/-xxhdpi/}"
+  done
+  for file in $(find . -type f -iname '*-xhdpi*'); do
+    mv "$file" "drawable-xhdpi/${file/-xhdpi/}"
+  done
+  for file in $(find . -type f -iname '*-hdpi*'); do
+    mv "$file" "drawable-hdpi/${file/-hdpi/}"
+  done
+  for file in $(find . -type f -iname '*-mdpi*'); do
+    mv "$file" "drawable-mdpi/${file/-mdpi/}"
+  done
+}

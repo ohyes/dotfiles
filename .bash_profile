@@ -20,13 +20,14 @@ render_git_stash() {
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/[\1$(parse_git_dirty)$(render_git_stash)]/"
 }
-export PS1="\u@\h \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+export PS1="sarah: \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 
 # Git branch dirty
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
  
-export CODE_DIR=$HOME/Documents/_SRO/code/dotfiles
+export CODE_DIR=$HOME/Documents/_SRO/code
+export DOTFILES_DIR=$CODE_DIR/dotfiles
 
-source $CODE_DIR/.aliases
+source $DOTFILES_DIR/.aliases
