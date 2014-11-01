@@ -2,6 +2,12 @@
 
 alias ohyes="cd $CODE_DIR"
 
+#cd
+alias ..='cd ..'
+
+#editor
+alias s='subl .'
+
 #terminal
 alias ls="ls -G"
 alias lsa="ls -aG"
