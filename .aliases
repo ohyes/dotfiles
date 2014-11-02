@@ -1,28 +1,34 @@
 #!/bin/bash
 
-alias ohyes="cd $CODE_DIR"
+alias ohyes='cd $CODE_DIR'
 
 #cd
 alias ..='cd ..'
+alias ~='cd ~'
+alias reenter='current=`pwd`; cd ..; cd $current'
+
 
 #editor
 alias s='subl .'
 
 #terminal
-alias ls="ls -G"
-alias lsa="ls -aG"
+alias ls='ls -G'
+alias lsa='ls -aG'
 
 #git
-alias gst="git status"
-alias ga="git add"
-alias gd="git diff"
-alias gwd="git diff --color-words"
+alias gst='git status'
+alias ga='git add'
+alias gd='git diff'
+alias gwd='git diff --color-words'
+alias gco='git checkout'
+alias gc='git commit'
+alias gp='git push'
 
 #ios
-alias pi="pod --verbose install"
+alias pi='pod --verbose install'
 
 #ruby
-alias bi="bundle install"
+alias bi='bundle install'
 
 
 function drawable {
