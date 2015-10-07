@@ -11,10 +11,10 @@ count_git_stash() {
 	git stash list 2> /dev/null | wc -l | sed 's/^ *//g'
 }
 render_git_stash() {
-	if [[ $(count_git_stash) != "0" ]]; then 
+	if [[ $(count_git_stash) != "0" ]]; then
 		echo " 👨  $(count_git_stash)"
 	fi
-}		
+}
 
 # Git branch in prompt
 parse_git_branch() {
@@ -26,8 +26,9 @@ export PS1="sarah: \W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
 function parse_git_dirty {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit, working directory clean" ]] && echo "*"
 }
- 
+
 export CODE_DIR=$HOME/Documents/_SRO/code
 export DOTFILES_DIR=$CODE_DIR/dotfiles
 
 source $DOTFILES_DIR/.aliases
+source $DOTFILES_DIR/git-completion.bash

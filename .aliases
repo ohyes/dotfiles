@@ -1,6 +1,8 @@
 #!/bin/bash
 
 alias ohyes='cd $CODE_DIR'
+alias ios='cd Code/gr_app/GoodreadsforIos'
+alias web='cd Code/Goodreads/rails_root'
 
 #cd
 alias ..='cd ..'
